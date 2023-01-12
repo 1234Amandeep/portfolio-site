@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio.in</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@600&display=swap"
+    rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+    href="https://fonts.googleapis.com/css2?family=ABeeZee&display=swap"
+    rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap" rel="stylesheet">
+
+    <style>
+
+        :root {
+            --default-bg: rgb(0, 0, 0);
+            --default-tc: rgb(255, 255, 255);
+            --default-accent: hsl(142, 90%, 61%);
+            font-family: "ABeeZee", sans-serif;
+            --h1: 4.768rem;
+            --h2: 3.815rem;
+            --h3: 3.052rem;
+            --h4: 2.441rem;
+            --h5: 1.953rem;
+            --h6: 1.563rem;
+            --h7: 1rem;
+            --h8: 1.25rem;
+            --h9: 0.8rem;
+            --ls1: 3rem;
+            --ls2: 2rem;
+            --ls3: 1rem;
+            --ls4: 0.75rem;
+            --ls5: 0.63rem;
+            --ls6: 0.5rem;
+            --ls7: 0.25rem;
+            
+        }
+
+        html {
+            max-width: 100%;
+            overflow-x:hidden;
+        }
+
+        body {
+            background: var(--default-bg);
+            margin: 0;
+            padding: 0;
+            max-height: 400vh;
+            font-family: "ABeeZee", sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            width: 100%;
+            min-height: 12vh;
+            background: rgba(0, 0, 0, 0.4);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            box-sizing: border-box;
+            border-bottom: 1px solid #fff;
+        }
+
+        nav {
+            width: 85%;
+            margin: 0 auto;
+        }
+        
+        .my-name {
+            float: left;
+            margin: 40px 0;
+            font-size: var(--h5);
+            text-transform: uppercase;
+            letter-spacing: var(--ls6);
+            word-spacing: 4px;
+            color: #fff;
+            text-shadow: 1px 1px;
+        }
+
+        .ul-container-hr {
+            margin: 0;
+            padding: 0;
+            float: right;
+            list-style-type: none;
+        }
+
+        .li-hr {
+            display: inline-block;
+            margin: 49px 13px;
+        }
+
+        .a-hr {
+            text-decoration: none;
+            color: var(--default-tc);
+            text-transform: uppercase;
+            font-size: var(--h9);
+            font-weight: 900;
+            letter-spacing: var(--ls7);
+            padding: 10px 20px;
+            border-radius: 36px;
+            border: 2px solid none;
+        }
+
+        .active {
+            background: rgba(0, 0, 0, 0.8);    
+            color:rgba(255, 255, 255, 1.0);
+            border: 2px solid white;
+        }
+
+        .a-hr:hover {
+            background: var(--default-bg);    
+            /* color:rgba(255, 255, 255, 1.0); */
+            border: 2px solid var(--default-tc);
+        }
+
+        .home-container {
+            width: 100vw;
+            height: 100vh;
+            /* background: url(https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Images/Stars.svg?sanitize=true); */
+            background-color: #000;
+            /* background-image: url(my-pic1.jpeg); */
+            background-position: center;
+            background-size: cover;
+            color: var(--default-tc);
+        }
+
+        #s-ft-h2 {
+            padding-top: 2em;
+            text-transform: capitalize;
+            letter-spacing: var(--ls6);
+            word-spacing: 1rem;
+            font-size: var(--h2);
+            text-align: center;
+            padding-bottom: 0rem;
+        }
+
+        #s-ft-p {
+            text-transform: capitalize;
+            text-align: center;
+            font-size: var(--h6);
+            letter-spacing: var(--ls6);
+            word-spacing: 1rem;
+            color: rgba(255, 255, 255, 0.63);
+        }
+
+        
+        .fuckoff {
+            padding-right: 14rem;
+            text-align: center;
+            font-size: var(--h1);
+            opacity: 0;
+        }
+        
+        @keyframes hover {
+            0% {
+                transform: translateX(0px);
+            }
+            
+            80% {
+                transform: translateX(-700px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(-750px);
+                opacity: 0;
+            }
+        }
+
+        @keyframes fuck {
+            0% {
+                transform: rotate(20deg);
+                opacity: 0;
+                color: var(--default-tc);
+            }
+
+            10% {
+                transform: rotate(0deg);
+                opacity: 0.2;
+            }
+
+            70% {
+                transform: rotate(-110deg);
+                opacity: 0.8;
+            }
+
+            80% {
+                transform: rotate(-80deg);
+                opacity: 0.85;
+            }
+
+            100% {
+                opacity: 1;
+                transform: rotate(-90deg);
+                color: var(--default-accent);
+            }
+        }
+        
+        .hoverme {
+            text-align: center;
+            font-size: var(--h6);
+            cursor: pointer;
+            font-family: 'Fira Code',monospace;
+            letter-spacing: var(--ls4);
+            font-weight: 300;
+            color: var(--default-accent)    ;
+        }
+        
+        
+        .hoverme:hover {
+            animation-name: hover;
+            animation-duration: 5s;
+            color: var(--default-tc);
+        }
+        
+        .hoverme:hover + .fuckoff {
+            animation-name: fuck;
+            /* animation-delay: 1.25s; */
+            animation-duration: 4s;
+        }
+
+        main {
+            margin: 0;
+            padding: 0;
+        }
+
+        .contact-container {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* background: #303841; */
+            background: var(--default-bg);
+            flex-direction: column;
+            color: var(--default-tc);
+            row-gap: 10em;
+        }       
+
+        #f-h1 {
+            margin-bottom: 16px;
+            letter-spacing: var(--ls6);
+            font-size: var(--h2);
+            text-transform: capitalize;
+            font-weight: 700;
+            
+        }
+
+        #f-para {
+            text-align: center;
+            margin: 0;
+            font-size: var(--h6);
+            color: rgba(255, 255, 255, 0.582);
+            font-weight: 100;
+        }
+
+        .fab {
+            padding: 0 1rem;
+            display: inline-block;
+            color: var(--default-tc);
+            text-decoration: none;
+            margin: 0 .25rem;
+            font-size: var(--h5);
+            letter-spacing: var(--ls7);
+            text-shadow: 2px 3px 3px #111;
+            transform: translateY(0px);
+            transition: transform 500ms ease-in-out;
+        }
+
+        .fab:hover {
+            transform: translateY(2.0rem);
+            color: var(--default-accent);
+        }
+
+        .contact-details {
+            font-style: normal;
+            font-size: 1.5rem;
+            color: var(--default-tc);
+            margin-left: 0.5rem;
+            font-family: "ABeeZee", sans-serif;
+            text-shadow: 2px 2px 1px #111;
+        }
+
+        
+        .fa-facebook-square:hover .contact-details {
+            color: var(--default-accent);
+        }
+
+        .fa-instagram:hover .contact-details {
+            color: var(--default-accent);
+        }
+
+        .fa-git-square:hover .contact-details {
+            color: var(--default-accent);
+        }
+
+        .fa-whatsapp-square:hover .contact-details {
+            color: var(--default-accent);
+        }
+
+        footer {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 20vh;
+            background:rgba(0, 0, 0, 0.4);
+        }
+
+        .ul-container-ft {
+            width: 85%;
+            margin: 0 auto;
+            display: flex;
+        }
+
+        .li-ft {
+            margin-right: 60px;
+            margin-top: 7.5vh;
+        }
+
+        .a-ft {
+            text-decoration: none;
+            /* color: rgba(95, 103, 109, 0.959); */
+            color: var(--default-tc);
+            font-size: var(--h8);
+            font-weight: 550;
+            letter-spacing: var(--ls7);   
+        }
+
+        .a-ft:hover {
+            text-decoration: underline;
+        }
+
+        .p-ft {
+            width: 85%;
+            margin: 0 auto;
+            margin-top: 20px;
+            text-transform: capitalize;
+            word-spacing: 3px;
+            letter-spacing: var(--ls7);
+            font-weight: bold;
+            /* color: black; */
+            color: var(--default-tc);
+            font-size: var(--h9);
+            /* color: #333; */
+        }
+
+        .std-nam {
+            /* color: #111; */
+            color: var(--default-tc);
+            color:var(--default-accent);
+            font-weight: 700;
+            letter-spacing: var(--ls6);
+        }
+
+        .about-section-outter-container {
+            width: 100%;
+            min-height: 100vh;
+            background: var(--default-bg);
+        }
+
+        .about-section-inner-container{
+            margin: 0 auto;
+            color: var(--default-tc);
+            font-family: "ABeeZee", sans-serif;
+        }
+
+
+        .heading-portfolio {
+            text-align: center;
+            /* background: #333; */
+            background: var(--default-bg);
+            color: var(--default-tc);
+            padding-top: 8em;
+        }
+
+        #my-h1 {
+            font-size: var(--h2);
+            font-weight: 700;
+            padding-bottom: 5rem;
+            letter-spacing: var(--ls6);
+        }
+
+        .portfolio-container1 {
+            width: 100vw;
+            max-height: 40vh;
+            /* background: #333; */
+            background: var(--default-bg);
+            display: flex;
+            justify-content: center;
+            /* align-items: baseline; */
+            /* max-height: 400px; */
+            /* padding-top: 8em; */
+            gap: 15rem;
+            /* border: 1px solid white; */
+            /* margin-bottom: 1px; */
+            /* padding-bottom: 4em; */
+            padding-top: 4em;
+            /* align-items:center ; */
+            /* flex-wrap: wrap; */
+            /* gap: 10rem; */
+            /* padding-top: 10em; */
+            /* flex-basis: 800px; */
+            /* padding-top: 0;
+            margin-top: 0; */
+        }
+
+        .portfolio-container2 {
+            width: 100vw;
+            max-height: 40vh;
+            /* background: #333; */
+            background: var(--default-bg);
+            display: flex;
+            justify-content: center;
+            /* padding-bottom: 8em; */
+            padding-top: 5em;
+            padding-bottom: 8em;
+            gap: 15rem;
+            /* align-items: flex-end; */
+            /* flex-wrap: wrap; */
+            /* gap: 10rem; */
+            /* padding-bottom: 10em; */
+
+            /* padding-top: 0;
+            margin-top: 0; */
+        }
+
+        .bg1 {
+            background: url(elon2.jpeg);
+        }
+
+        .bg2 {
+            background: url(form4.jpeg);
+        }
+
+        .bg3 {
+            background: url(res11.jpeg);
+        }
+
+        .bg4 {
+            background: url(music5.jpeg);
+        }
+
+        #elon-para1 {
+            margin-top: 0;
+            margin-bottom: 4px;
+            /* letter-spacing: 0.5px; */
+            font-weight: 500;
+            text-transform: capitalize;
+            color: rgba(255, 255, 255, 0.911);
+        }
+
+        #elon-para2 {
+            margin-top: 0;
+            line-height: 1.15;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+            text-transform: capitalize;
+            color: rgba(255, 255, 255, 0.911);
+        }
+
+        #res-para1 {
+            margin-top: 0;
+            margin-bottom: 6px;
+            line-height: 1.05;
+            color: rgba(255, 255, 255, 0.911);
+            /* font-family: 'Fira Code',monospace; */
+            font-weight: 500;
+        }
+
+        #res-para2 {
+            margin-top: 0;
+            line-height: 1.05;
+            color: rgba(255, 255, 255, 0.911);
+            /* font-family: 'Fira Code',monospace; */
+            font-weight: 500;
+        }
+        #music-para1 {
+            margin-top: 0;
+            /* margin-bottom: 6px; */
+            line-height: 1.35;
+            color: rgba(255, 255, 255, 0.911);
+            /* font-family: 'Fira Code',monospace; */
+            font-weight: 500;
+        }
+
+        #music-para2 {
+            margin-top: 0;
+            line-height: 1.05;
+            color: rgba(255, 255, 255, 0.911);
+            /* font-family: 'Fira Code',monospace; */
+            font-weight: 500;
+        }
+
+        #form-para1 {
+            margin-top: 0;
+            /* margin-bottom: 6px; */
+            line-height: 1.05;
+            margin-bottom: 6px;
+            color: rgba(255, 255, 255, 0.911);
+            /* font-family: 'Fira Code',monospace; */
+            text-transform: capitalize;
+            font-weight: 500;
+        }
+
+        #form-para2 {
+            margin-top: 0;
+            line-height: 1.05;
+            color: rgba(255, 255, 255, 0.911);
+            /* font-family: 'Fira Code',monospace; */
+            font-weight: 500;
+        }
+
+        .card1 {
+            padding: 10em 0 0;
+            background-size: cover;
+            background-position: center;
+            max-height: 13.75rem;
+            max-width: 35ch;
+            min-width: 35ch;
+            border-radius: .5rem;
+            overflow: hidden; 
+            transition: transform 500ms ease;
+        }
+
+        .sp1 {
+            max-height: 13rem;
+        }
+
+        .sp1 {
+            max-height: 13rem;
+        }
+
+        .sp2 {
+            max-height: 13rem;
+        }
+
+        .sp3 {
+            max-height: 13rem;
+        }
+
+        .card1:hover,
+        .card1:focus-within {
+            transform: scale(1.05);
+        }
+
+        .card1-content {
+            --padding: 1.5rem;
+            padding: var(--padding);
+            background: linear-gradient(
+                hsl(0 0% 0% / 0),
+                hsl(0 0% 0% / 0.5)20%,
+                hsl(0 0% 0% / 1)
+            );
+            transform: translateY(63%);
+            transition: transform 500ms ease;
+        }
+
+        .card1-title {
+            color: var(--default-tc);
+        }
+
+        .card1-content > *:not(.card1-title) {
+            opacity: 0;
+            transition: opacity 500ms linear;
+            
+        }
+
+        .card1:hover .card1-content > *:not(.card1-title),
+        .card1:focus-within .card1-content > *:not(.card1-title) {
+            opacity: 1;
+            /* transition-delay: 500ms; */
+            transition-delay: 900ms;
+        }
+
+        .card1:hover .card1-content,
+        .card1:focus-within .card1-content {
+            transform: translateY(3%);
+            transition-delay: 500ms;
+        }
+
+        .card1-title {
+            position: relative;
+            width: max-content;
+        }
+
+        .card1-title::after {
+            content: '';
+            position: absolute;
+            background: var(--default-accent);
+            height: 4px;
+            left: calc((var(--padding) ) * -1);
+            bottom: -3px;
+            width: calc(100% + var(--padding));
+            transform: scaleX(0);
+            transition: transform 500ms ease;
+            transform-origin: left;
+        }
+        
+        .card1:hover .card1-title::after,
+        .card1:focus-within .card1-title::after {
+            transform: scaleX(1);
+        }
+
+        .card1-para {
+            color: rgb(255 255 255 / .9);
+            transform: scale(0);
+            transform-origin: top left;
+            transition: transform 1s ease;
+        }
+
+        .card1:hover .card1-para,
+        .card1:focus-within .card1-para {
+            transform: scale(1);
+            transition-delay: 2500ms;
+        }
+
+        .button {
+            display: inline-block;
+            cursor: pointer;
+            color: var(--default-bg);
+            text-decoration: none;
+            background: var(--default-accent);
+            padding: 0.5rem 1rem;
+            /* letter-spacing: .px; */
+            text-transform: uppercase;
+            border-radius: .25rem;
+
+        }
+
+        .button:hover,
+        .button:focus,
+        .button:focus-within {
+            /* color: var(--default-bg); */
+            background: var(--default-tc);
+        }
+
+        .text {
+        float: left;
+        margin-top: 20rem;
+        margin-left: 20rem;
+    }
+
+    .img {
+        float: right;
+        background: url(my-pic.jpeg);
+        background-position: center;
+        background-size: cover;
+        width: 30ch;
+        padding-bottom: 22.5em;
+        margin-right: 25em;
+        margin-top: 25rem;
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: 5px 5px 5px rgba(241, 236, 236, 0.966);
+        transition: transform 500ms ease-in-out;
+        opacity: 0.95;
+    }
+
+    .img:hover {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+
+    .heading {
+        font-size: var(--h2);
+        margin-bottom: 3rem;
+    }
+
+    .paragraph {
+        margin-top: 2rem;
+        text-align: justify;
+        width: 42ch;
+        line-height: 1.75;
+        font-size: var(--h5);
+    }
+
+    .special {
+        letter-spacing: var(--ls5);
+    }
+
+    .size {
+        font-family: "ABeeZee", sans-serif;
+        font-weight: 600;
+    }
+
+        </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <span class="my-name">
+                Amandeep singh
+            </span>
+            <ul class="ul-container-hr">
+                <li class="li-hr" id="home"><a class="a-hr active" href="#">Home</a></li>
+                <li class="li-hr"><a class="a-hr" href="#about">About</a></li>
+                <li class="li-hr"><a class="a-hr" href="#portfolio">Portfolio</a></li>
+                <li class="li-hr"><a class="a-hr" href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="background-img home-container">
+            <div class="some-funcky-txt">
+                <h2 id="s-ft-h2">i do, what i do</h2>
+                <p id="s-ft-p"><em>"if you don't like it then just..."</em></p>
+                <div class="hoverme">hover me!</div>
+                <div class="fuckoff"><h1 id="s-ft-h1"># fuck-off</h1></div>
+            </div>
+        </section>
+        <div style="width: 85%; margin: 0 auto;"><hr></div>
+        <section  id="about" class="about-section-outter-container">
+            <div class="about-section-inner-container">
+                <div class="container">
+                    <div class="text">
+                    <div class="heading">
+                        <span class="special">A.D.S</span> Design Studio
+                    </div>
+                    <div class="paragraph">
+                        I'm a self-taught web designer, developer,
+                        <b><em class="size">BCA</em></b> student, from Ghaziabad. I'm
+                        currently learning <em><b>Javascript</b></em
+                        >. I have also build some small but usefull projects using languages
+                        like <em><b>HTML5 & CSS3</b></em
+                        >. And In my future I'm going to learn <em><b>SASS</b></em
+                        >, <em><b>Bootstrap</b></em
+                        >, & some more frameworks like: <em><b>Vue.js</b></em> and many more.
+                    </div>
+                    </div>
+                    <div class="img"></div>
+                </div>
+        </section>
+        <div style="width: 85%; margin: 0 auto;"><hr></div>
+        <div id="portfolio" class="heading-portfolio"><div id="my-h1">Some of my works</div></div>
+        <section class="portfolio-container1">
+            <div class="card1 bg1 sp0">
+                <div class="card1-content">
+                    <h2 class="card1-title">
+                        #1. Tribute card
+                    </h2>
+                    <p class="card1-para" id="elon-para1">"something is important enough.</p>
+                    <p class="card1-para" id="elon-para2">You do it even if the odds are not in your favour..."</p>
+                    <a href="#" class="button">Read more</a>
+                </div>
+            </div>
+            <div class="card1 bg2 sp1">
+                <div class="card1-content">
+                    <h2 class="card1-title">
+                        #2. Form
+                    </h2>
+                    <p id="form-para1" class="card1-para">
+                        Hello new "<em>User</em>",
+                    </p>
+                    <p id="form-para2" class="card1-para">
+                        Welcome to our website.
+                    </p>
+                    <a href="#" class="button">Read more</a>
+                </div>
+            </div>
+        </section>
+        <section class="portfolio-container2">
+            <div class="card1 bg3 sp2">
+                <div class="card1-content">
+                    <h2 class="card1-title">
+                        #3. Restaurant Page
+                    </h2>
+                    <p id="res-para1" class="card1-para">"There is no love sincerer</p>                   
+                    <p id="res-para2" class="card1-para">than the love of food..."</p>
+                    <a href="#" class="button">Read more</a>
+                </div>
+            </div>
+            <div class="card1 bg4 sp3">
+                <div class="card1-content">
+                    <h2 class="card1-title">#4. Music Store</h2>
+                    <p id="music-para1" class="card1-para">"Life is one grand, sweet song so start the music."</p> 
+                    <a href="#" class="button">Read more</a>
+                </div>
+            </div>
+        </section>
+        <div style="width: 85%; margin: 0 auto;"><hr></div>
+        <section id="contact" class="contact-container">
+            <div class="funcky-txt">
+                <h1 id="f-h1">Let's work together...</h1>
+                <p id="f-para"><em>How do you take your coffee?</em></p>
+            </div>
+            <div class="sm-content">
+                <a href="#" class="fab fa-facebook-square"><i class="contact-details">Facebook</i></a>
+                <a href="#" class="fab fa-instagram"><i class="contact-details">Instagram</i></Instagram></a>
+                <a href="#" class="fab fa-git-square"><i class="contact-details">Github</i></a>
+                <a href="#" class="fab fa-whatsapp-square"><i class="contact-details">Whatsapp</i></a>
+            </div>
+        </section>
+        <hr>
+    </main>
+    <footer>
+        <Section>
+            <ul class="ul-container-ft">
+                <li class="li-ft"><a class="a-ft" href="#">Home</a></li>
+                <li class="li-ft"><a class="a-ft" href="#about">About</a></li>
+                <li class="li-ft"><a class="a-ft" href="#portfolio">Portfolio</a></li>
+                <li class="li-ft"><a class="a-ft" href="#contact">Contact</a></li>
+                </ul>
+                <p class="p-ft">
+                    Copyright &copy; <span class="std-nam"><em>A.D.S Web Design Studio</em></span> 2021. All rights reserved 
+                </p>
+        </Section>
+    </footer>
+</body>
+</html>
